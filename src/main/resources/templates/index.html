@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-Frame-Options" content="sameorigin" />
+
+    <title>智能交通竞赛管理系统2018</title>
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <![endif]-->
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet"></link>
+    <link th:href="@{/css/style.css}" rel="stylesheet"></link>
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+    <div id="wrapper">
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="nav-close"><i class="fa fa-times-circle"></i>
+            </div>
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span><img alt="lenovo" class="img-responsive center-block" th:src="@{/images/lenovo_logo.png}" /></span>
+                            <!-- <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs"><strong class="font-bold">user</strong></span>
+                                </span>
+                            </a> -->
+                        </div>
+                    </li>
+                    <li>
+                        <a  class="J_menuItem" href="logo.html" data-index="0">
+                            <i class="fa fa-home"></i>
+                            <span class="nav-label">主页</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" th:href="@{/usermgr}"><i class="fa fa-table"></i> <span class="nav-label">用户管理</span></a>
+                    </li>
+                    <li>
+                        <a class="J_menuItem" th:href="@{/sandset}"><i class="fa fa-edit"></i> <span class="nav-label">沙盘设置</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--左侧导航结束-->
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <div class="form-group" style="text-align: center;">
+                            <h1 >智能交通服务器实训版</h1>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="row content-tabs">
+                <nav class="page-tabs J_menuTabs">
+                    <div class="page-tabs-content">
+                        <a href="javascript:;" class="active J_menuTab" data-id="logo.html">首页</a>
+                    </div>
+                </nav>
+                <a th:href="@{/logout}" class="roll-nav roll-right J_tabExit"><i class="fa fa-sign-out"></i> 退出</a>
+                
+            </div>
+            <div class="row J_mainContent" id="content-main">
+                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="logo.html" frameborder="0" data-id="logo.html" seamless="seamless"></iframe>
+            </div>
+            <div class="footer">
+                <div class="pull-left">&copy; 2017-2018 智能交通竞赛管理系统</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+    <script th:src="@{/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+    <script th:src="@{/js/plugins/layer/layer.min.js}"></script>
+
+    <script th:src="@{/js/hplus.js}"></script>
+    <script type="text/javascript" th:src="@{/js/contabs.js}"></script>
+
+</body>
+</html>

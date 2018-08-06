@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>登录</title>
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
+<link th:href="@{/css/font-awesome.min.css}"  rel="stylesheet"></link>
+<link th:href="@{/css/style.css}" rel="stylesheet"></link>
+
+</head>
+
+<body class="gray-bg">
+	<div >
+		<div class="row">
+			<div class="col-md-offset-3 col-md-6 text-center">
+				<div>
+					<div>
+						<h2 class="logo-name">智能交通</h2>
+					</div>
+					<div style="margin-top: 40px">
+						<h3>用户登录</h3>
+						<form class="m-t form-horizontal" th:action="@{/login}" method="post" >
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+								<input type="text" name="username" class="form-control" placeholder="用户名" required="true" />
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+								<input type="password" name="password" class="form-control" placeholder="密码" required="true" />
+							</div>
+							<br/>
+							<div class="form-group">
+								<button type="submit" class="btn btn-default">登录</button>
+							</div>
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script th:src="@{/js/jquery.min.js?v=2.1.4}" src="js/jquery.min.js?v=2.1.4"></script>
+	<script th:src="@{/js/bootstrap.min.js?v=3.3.6}" src="js/bootstrap.min.js?v=3.3.6"></script>
+
+</body>
+</html>

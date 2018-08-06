@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>用户管理</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet"></link>
+    <link th:href="@{/css/font-awesome.css}" href="css/font-awesome.css?v=4.4.0" rel="stylesheet"></link>
+    <link th:href="@{/css/style.css}" href="css/style.css?v=4.1.0" rel="stylesheet"></link>
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>用户信息</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                            <table th:unless="${#lists.isEmpty(users)}" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>用户名称</th>
+                                        <th>口令</th>
+                                        <th>角色</th>
+                                        <th>动作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="user : ${users}">
+                                        <td th:text="${user.username}"></td>
+                                        <td th:text="${user.password}"></td>
+                                        <td th:text="${roles[user.role]}"></td>
+                                        <td>
+                                            <div class="btn-toolbar">
+                                                <div class="btn-group">
+                                                    <a class="btn" th:href="@{'/user/set_adv?username='+${user.username}}">设为一般管理员</a>
+                                                    <a class="btn" th:href="@{'/user/set_nor?username='+${user.username}}">设为普通用户</a>
+                                                    <a class="btn" th:href="@{'/user/disable?username='+${user.username}}">设为无效用户</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/js/jquery.min.js}" src="js/jquery.min.js?v=2.1.4"></script>
+    <script th:src="@{/js/bootstrap.min.js}" src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script th:src="@{/js/content.js}" src="js/content.js?v=1.0.0"></script>
+
+</body>
+</html>
